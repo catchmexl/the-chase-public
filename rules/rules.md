@@ -3,7 +3,7 @@ The **Escapers** try to get away, while the **Chasers** attempt to track them do
 The game starts at **T-Centralen (Sergels torg)**, where all participants gather.
 Players are divided into **one Escaper team** and **three Chaser teams.**
 Each team consists of at least **two to three players** who must stay together at all times.
-Any form of public transportation is allowed, but teams must log the start and end points of each journey.
+Any form of public transport is allowed, but teams must log the start and end points of each journey.
 The **Escaper team** is allowed **10 transportations**, while Chaser teams are limited to **5 transportations** each.
 Moving on foot is always permitted and does not count as a transportation use.
 The Escapers must **reveal their location** after their **3rd and 8th** transportation.
@@ -33,7 +33,7 @@ Throughout the game, players can interact with **Trigger Zones** marked on the m
 **Who Can Use It?** Escapers & Chasers.
 **Cooldown:** Cannot be used within **3 minutes** of "Freeze."
 
-### **Transportation Clue (Purple Marker - Outdoor Shops)**
+### **Transport Clue (Purple Marker - Outdoor Shops)**
 **Effect:** The targeted team must **reveal their last transportation route.**
 **Who Can Use It?** Escapers & Chasers.
 **Cooldown:** No cooldown.
