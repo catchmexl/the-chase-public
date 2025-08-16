@@ -24,9 +24,9 @@ The chase intensifies as the chaser's narrow down the escapers location.
 Throughout the game, players can interact with **Trigger Zones** marked on the map. These zones allow teams to trigger strategic actions that affect the game.
 
 ### **Freeze (Blue Markers - Libraries)**
-**Effect:** The targeted team must **stop moving for 6 minutes**. If they are in a vehicle, they must exit at the next stop. This also counts as a used transportation.
-**Who Can Use It?** Escapers & Chasers.
-**Cooldown:** Cannot be used within **3 minutes** of "Live Tracking".
+**Effect:** The targeted team must **stop moving for 6 minutes**. If they are in a vehicle, they must exit at the next stop. This also counts as a used transportation.\
+**Who Can Use It?** Escapers & Chasers.\
+**Cooldown:** Cannot be used within **3 minutes** of "Live Tracking".\
 
 ### **Live Location (Red Markers - Second-Hand Shops)**
 **Effect:** The targeted teams **live location gets displayed for 10 minutes**.
