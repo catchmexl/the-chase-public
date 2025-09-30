@@ -24,7 +24,7 @@ The **Clue Points** help track down the Escapers. Activate the Clue Points in th
 
 **Phase 3: Closing In** (Final 30 minutes)
 The escapers are **only allowed to move on foot** from this point onward.
-The chase intensifies as the chaser's narrow down the escapers location.
+The chase intensifies as the Chaser's narrow down the Escapers' location.
 |
 Throughout the game, players can interact with **Clue Points** marked on the map. Activating a Clue Point gives teams specific advantages.
 - **Activation:** Teams must physically go to the Clue Point and press Activate in the app.
@@ -36,21 +36,22 @@ Throughout the game, players can interact with **Clue Points** marked on the map
 - **Be considerate:** It is displayed in the Log, which Clue Point got activated, so you will reveal your location by activating one! 
 
 ### **Freeze (Blue Markers)**
-**Effect:** Target team must stop moving for 6 minutes. The Freeze does not activate automatically — frozen team must confirm they stopped moving. If frozen in transport, exit at next station and then confirm the freeze.
+**Effect:** Target team must stop moving for 6 minutes. The Freeze does not activate automatically — frozen team must confirm that they stopped moving. If frozen in transport, exit at next station and then confirm the freeze.
 
 **Who Can Use It?** Escapers & Chasers.
 
 **Cooldown:** Cannot be used within **3 minutes** after "Live Tracking" or "Freeze".
 
 ### **Live Location (Red Markers)**
+
 **Effect:** The targeted teams **live location gets displayed for 10 minutes**.
 
 **Who Can Use It?** Escapers & Chasers.
 
-**Cooldown:** Cannot be used within **3 minutes** of "Freeze" or "Live Tracking'.
+**Cooldown:** Cannot be used within **3 minutes** after "Freeze" or "Live Tracking".
 
 ### **Transport Clue (Purple Marker)**
-**Effect:** The targeted team must **reveal their last transportation route.** If in transport, reveal current mode, where you started, and last station you passed.
+**Effect:** The targeted team must **reveal their last transportation route.** If in transport, reveal current mode, where you started, and the last station you passed.
 
 **Who Can Use It?** Escapers & Chasers.
 
@@ -65,7 +66,7 @@ Throughout the game, players can interact with **Clue Points** marked on the map
 
 
 ### **Usage**
-To **activate a Clue Point**, a team must physically go to the zone, select it on the map and press the activation button.
+To **activate a Clue Point**, a team must physically go to the point, select it on the map in the App and press the activation button.
 Using Clue Points strategically changes the dynamic of the game. Plan carefully.
 |
 To maximize your chances of catching the **Escapers**, teamwork and strategy are key. Here are some essential tips:
@@ -92,7 +93,7 @@ By combining these tactics, the **Chasers** can corner the **Escapers** and make
 **For Escapers:**
 **Use Clue Points to Block the Chasers**
 Each **Clue Point can only be used once**, so activating one prevents the **Chasers** from using it later.
-But be careful: Trigger Zones **reveal your location**, so use them wisely.
+But be careful: Clue Points **reveal your location**, so use them wisely.
 
 **Plan for the Final Walk**
 After **1 hour 30 minutes**, you **can only move on foot**.
