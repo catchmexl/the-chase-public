@@ -37,22 +37,30 @@ Throughout the game, players can interact with **Clue Points** marked on the map
 
 ### **Freeze (Blue Markers)**
 **Effect:** Target team must stop moving for 6 minutes. The Freeze does not activate automatically — frozen team must confirm they stopped moving. If frozen in transport, exit at next station and then confirm the freeze.
+
 **Who Can Use It?** Escapers & Chasers.
+
 **Cooldown:** Cannot be used within **3 minutes** after "Live Tracking" or "Freeze".
 
 ### **Live Location (Red Markers)**
 **Effect:** The targeted teams **live location gets displayed for 10 minutes**.
+
 **Who Can Use It?** Escapers & Chasers.
+
 **Cooldown:** Cannot be used within **3 minutes** of "Freeze" or "Live Tracking'.
 
 ### **Transport Clue (Purple Marker)**
 **Effect:** The targeted team must **reveal their last transportation route.** If in transport, reveal current mode, where you started, and last station you passed.
+
 **Who Can Use It?** Escapers & Chasers.
+
 **Cooldown:** No cooldown.
 
 ### **Surveillance (Green Markers)** *(Chasers Only)*
 **Effect:** The **Escapers** must send a **360° video** of their current location.
+
 **Who Can Use It?** Chasers only.
+
 **Cooldown:** No cooldown. 
 
 
