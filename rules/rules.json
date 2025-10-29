@@ -32,14 +32,22 @@
       "file": "trigger-zones.md",
       "category": "mechanics",
       "order": 4,
-      "description": "Clue Points on the map and their effects (Freeze, Live Location, etc.)"
+      "description": "Trigger zones and their effects on gameplay"
+    },
+    {
+      "id": "types-of-clue-points",
+      "title": "Types of Clue Points",
+      "file": "types-of-clue-points.md",
+      "category": "mechanics",
+      "order": 5,
+      "description": "The effect of clue points (Freeze, Live Location, etc.)"
     },
     {
       "id": "tips-chasers",
       "title": "Tips for the Chasers",
       "file": "tips-chasers.md",
       "category": "tips",
-      "order": 5,
+      "order": 6,
       "description": "Strategic advice for Chaser teams"
     },
     {
@@ -47,7 +55,7 @@
       "title": "Tips for the Escapers",
       "file": "tips-escapers.md",
       "category": "tips",
-      "order": 6,
+      "order": 7,
       "description": "Strategic advice for the Escaper team"
     },
     {
@@ -55,7 +63,7 @@
       "title": "Fair Play",
       "file": "fair-play.md",
       "category": "conduct",
-      "order": 7,
+      "order": 8,
       "description": "Rules for fair play, safety, and honesty"
     }
   ]
