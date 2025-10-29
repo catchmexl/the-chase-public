@@ -1,0 +1,58 @@
+name: Validate Rules
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'rules/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'rules/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Run validation script
+      run: |
+        cd rules
+        node validate-rules.js
+
+    - name: Validate JSON schema
+      uses: cardinalby/schema-validator-action@v3
+      with:
+        schema: 'rules/rules_manifest.schema.json'
+        file: 'rules/rules.json'
+
+    - name: Check markdown lint
+      uses: DavidAnson/markdownlint-cli2-action@v14
+      with:
+        globs: 'rules/*.md'
+        config: |
+          {
+            "default": true,
+            "MD013": false,
+            "MD033": false,
+            "MD041": false
+          }
+
+    - name: Summary
+      if: always()
+      run: |
+        echo "## Validation Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ $? -eq 0 ]; then
+          echo "✅ All validations passed!" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ Validation failed. Please check the logs above." >> $GITHUB_STEP_SUMMARY
+        fi
