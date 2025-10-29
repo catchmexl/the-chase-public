@@ -1,5 +1,3 @@
-# Game Play
-
 The game is divided into three distinct phases, each with different rules and strategies.
 
 ## Phase 1: Head Start (First 15 minutes)
@@ -7,7 +5,7 @@ The game is divided into three distinct phases, each with different rules and st
 - The **Escapers** are free to move immediately once the game starts
 - The **Chaser teams** must wait **15 minutes** before beginning their pursuit
 
-## Phase 2: Chase (From 15 minutes to 1 hour 30 minutes)
+## Phase 2: Chase (15min to 1h30min)
 
 - The **Chasers** are now actively tracking down the **Escapers**
 - The **Clue Points** help track down the Escapers

@@ -1,5 +1,3 @@
-# Fair Play
-
 All players are expected to follow these rules to ensure a fair and safe game:
 
 ## Restricted Areas

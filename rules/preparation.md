@@ -1,5 +1,3 @@
-# Preparation
-
 All players gather at **Sergels torg (T-Centralen)** before the game begins.
 
 ## Teams

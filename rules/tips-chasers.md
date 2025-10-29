@@ -1,5 +1,3 @@
-# Tips for the Chasers
-
 To maximize your chances of catching the **Escapers**, teamwork and strategy are key. Here are some essential tips:
 
 ## Split Up & Cover More Ground

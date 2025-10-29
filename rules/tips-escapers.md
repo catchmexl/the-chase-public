@@ -1,5 +1,3 @@
-# Tips for the Escapers
-
 Staying ahead of the **Chasers** requires quick thinking and strategic planning. Here are some tips to help you survive:
 
 ## Use Clue Points to Block the Chasers
