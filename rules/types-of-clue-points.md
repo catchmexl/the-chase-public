@@ -9,8 +9,6 @@
 
 **Cooldown:** Cannot be used within **3 minutes** after "Live Tracking" or "Freeze"
 
----
-
 ## Live Location (Red Markers)
 
 **Effect:** The targeted team's **live location gets displayed for 10 minutes**
@@ -18,8 +16,6 @@
 **Who Can Use It?** Escapers & Chasers
 
 **Cooldown:** Cannot be used within **3 minutes** after "Freeze" or "Live Tracking"
-
----
 
 ## Transport Clue (Purple Marker)
 
@@ -34,8 +30,6 @@
 
 **Cooldown:** No cooldown
 
----
-
 ## Surveillance (Green Markers) *(Chasers Only)*
 
 **Effect:** The **Escapers** must send a **360° video** of their current location
@@ -43,8 +37,6 @@
 **Who Can Use It?** Chasers only
 
 **Cooldown:** No cooldown
-
----
 
 ## Usage Strategy
 
