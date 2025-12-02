@@ -1,21 +1,21 @@
 ## Freeze (Blue Markers)
 
-**Effect:** Target team must **stop moving for 6 minutes**
+**Effect:** Target team must **stop moving for {{FREEZE_DURATION}} minutes**
 
 - The Freeze does **not activate automatically** — frozen team must **confirm** that they stopped moving
 - If frozen while in transport, **exit at next station** and then confirm the freeze
 
 **Who Can Use It?** Escapers & Chasers
 
-**Cooldown:** Cannot be used within **3 minutes** after "Live Tracking" or "Freeze"
+**Cooldown:** Cannot be used within **{{COOLDOWN}} minutes** after "Live Tracking" or "Freeze"
 
 ## Live Location (Red Markers)
 
-**Effect:** The targeted team's **live location gets displayed for 10 minutes**
+**Effect:** The targeted team's **live location gets displayed for {{TRACKING_DURATION}} minutes**
 
 **Who Can Use It?** Escapers & Chasers
 
-**Cooldown:** Cannot be used within **3 minutes** after "Freeze" or "Live Tracking"
+**Cooldown:** Cannot be used within **{{COOLDOWN}} minutes** after "Freeze" or "Live Tracking"
 
 ## Transport Clue (Purple Marker)
 
