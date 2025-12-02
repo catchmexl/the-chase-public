@@ -11,7 +11,7 @@ The game is divided into three distinct phases, each with different rules and st
 - The **Clue Points** help track down the Escapers
 - Activate the Clue Points in the city (see **Trigger Zones** section for more information)
 
-## Phase 3: Closing In (Final 30 minutes)
+## Phase 3: Closing In (Final {{CLOSING_IN}} minutes)
 
 - The **Escapers** are **only allowed to move on foot** from this point onward
 - The chase intensifies as the Chasers narrow down the Escapers' location
