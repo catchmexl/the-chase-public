@@ -7,7 +7,7 @@ Staying ahead of the **Chasers** requires quick thinking and strategic planning.
 
 ## Plan for the Final Walk
 
-After **1 hour 30 minutes**, you **can only move on foot**.
+In the  **last {{CLOSING_IN}} minutes**, you **can only move on foot**.
 
 - Make sure you end up somewhere with **multiple escape routes**
 - Avoid open areas with limited exits
