@@ -14,7 +14,7 @@ The rules are organized into individual markdown files for maintainability and a
   - `objective.md` - Game objective and winning conditions
   - `preparation.md` - Team setup and game duration
   - `gameplay.md` - Three phases of gameplay
-  - `trigger-zones.md` - Clue Points and their effects
+  - `clue-points.md` - Clue Points and their effects
   - `tips-chasers.md` - Strategic tips for Chaser teams
   - `tips-escapers.md` - Strategic tips for Escaper team
   - `fair-play.md` - Fair play rules and safety guidelines
@@ -58,7 +58,7 @@ The `rules.json` manifest follows this structure:
 Rules are grouped into four categories:
 
 1. **Core** - Essential game rules (objective, preparation, gameplay)
-2. **Mechanics** - Game mechanics and features (trigger zones)
+2. **Mechanics** - Game mechanics and features (clue points)
 3. **Tips** - Strategic advice for players
 4. **Conduct** - Fair play and safety guidelines
 
@@ -98,23 +98,6 @@ Or manually validate:
 2. Verify JSON syntax with a validator
 3. Ensure markdown renders correctly
 4. Check that manifest follows the schema
-
-### 4. Update Changelog
-
-Add an entry to `CHANGELOG.md` describing your changes:
-
-```markdown
-## [1.1.0] - 2025-10-29
-
-### Added
-- New section on team communication strategy
-
-### Changed
-- Updated Freeze duration from 5 to 6 minutes
-
-### Fixed
-- Typo in Fair Play section
-```
 
 ## Schema Validation
 
@@ -159,7 +142,7 @@ We follow [Semantic Versioning](https://semver.org/):
 - [ ] Update based on player feedback
 - [ ] Check all links are valid
 - [ ] Validate manifest structure
-- [ ] Keep changelog updated
+
 
 ### Breaking Changes
 
@@ -168,8 +151,7 @@ If making breaking changes to the manifest structure:
 1. Increment **MAJOR** version
 2. Update schema file
 3. Coordinate with app development team
-4. Document migration path in changelog
-5. Maintain backward compatibility when possible
+4. Maintain backward compatibility when possible
 
 ## License
 

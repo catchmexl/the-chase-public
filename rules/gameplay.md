@@ -9,7 +9,7 @@ The game is divided into three distinct phases, each with different rules and st
 
 - The **Chasers** are now actively tracking down the **Escapers**
 - The **Clue Points** help track down the Escapers
-- Activate the Clue Points in the city (see **Trigger Zones** section for more information)
+- Activate the Clue Points in the city (see **Clue Points** section for more information)
 
 ## Phase 3: Closing In (Final {{CLOSING_IN}} minutes)
 

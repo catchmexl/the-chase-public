@@ -34,20 +34,20 @@
           "type": "string",
           "description": "Unique identifier for the rule section (kebab-case)",
           "pattern": "^[a-z][a-z0-9-]*[a-z0-9]$",
-          "examples": ["objective", "gameplay", "trigger-zones"]
+          "examples": ["objective", "gameplay", "clue-points"]
         },
         "title": {
           "type": "string",
           "description": "Display title for the rule section",
           "minLength": 1,
           "maxLength": 100,
-          "examples": ["Objective", "Game Play", "Trigger Zones"]
+          "examples": ["Objective", "Game Play", "Clue Points"]
         },
         "file": {
           "type": "string",
           "description": "Markdown filename relative to rules directory",
           "pattern": "^[a-z0-9-]+\\.md$",
-          "examples": ["objective.md", "gameplay.md", "trigger-zones.md"]
+          "examples": ["objective.md", "gameplay.md", "clue-points.md"]
         },
         "category": {
           "type": "string",

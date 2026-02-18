@@ -27,12 +27,12 @@
       "description": "Three phases of gameplay from head start to closing in"
     },
     {
-      "id": "trigger-zones",
-      "title": "Trigger Zones",
-      "file": "trigger-zones.md",
+      "id": "clue-points",
+      "title": "Clue Points",
+      "file": "clue-points.md",
       "category": "mechanics",
       "order": 4,
-      "description": "Trigger zones and their effects on gameplay"
+      "description": "Clue points and their effects on gameplay"
     },
     {
       "id": "types-of-clue-points",

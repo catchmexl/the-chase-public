@@ -1,4 +1,4 @@
-Throughout the game, players can interact with **Clue Points** (also called **Trigger Zones**) marked on the map. Activating a Clue Point gives teams specific advantages.
+Throughout the game, players can interact with **Clue Points** marked on the map. Activating a Clue Point gives teams specific advantages.
 
 ## How Clue Points Work
 
