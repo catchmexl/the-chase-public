@@ -6,4 +6,4 @@ Throughout the game, **Clue Points** are marked on the map. Visit one and activa
 - **Effect direction:**
   - A **Chaser team** activating a Clue Point affects the **Escapers**
   - The **Escaper team** activating a Clue Point affects **all Chaser teams**
-- **Location reveal:** Activating a Clue Point exposes your location in the game log — your opponents will know where you were
+- **Location reveal:** Activating a Clue Point exposes your location in the game log — your opponents will know which one you activated
