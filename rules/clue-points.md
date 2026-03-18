@@ -1,11 +1,9 @@
-Throughout the game, players can interact with **Clue Points** marked on the map. Activating a Clue Point gives teams specific advantages.
 
-## How Clue Points Work
+Throughout the game, **Clue Points** are marked on the map. Visit one and activate it to gain a strategic advantage, but use them wisely.
 
-- **Activation:** Teams must physically go to the Clue Point and press **Activate** in the app
-- **Usage:** Each Clue Point can only be used **once per game**
-- **Effect Direction:**
-  - If a **Chaser team** activates a Clue Point, the **Escapers** are affected
-  - If the **Escaper team** activates a Clue Point, **all Chaser teams** are affected
-- **Cooldowns:** Some Clue Points have cooldowns to prevent immediate repeated use
-- **Location Reveal:** Activating a Clue Point **reveals your location** in the game log, so use them wisely!
+- **Activation:** Go to the Clue Point location (within 50 m) and press **Activate** in the app
+- **One use only:** Each individual Clue Point can only be activated once — once used, it is disabled for the rest of the game. Other Clue Points of the same type elsewhere on the map remain available
+- **Effect direction:**
+  - A **Chaser team** activating a Clue Point affects the **Escapers**
+  - The **Escaper team** activating a Clue Point affects **all Chaser teams**
+- **Location reveal:** Activating a Clue Point exposes your location in the game log — your opponents will know where you were
