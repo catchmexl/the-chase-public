@@ -2,7 +2,7 @@ Players navigate the city using **public transport** (metro, bus, tram, ferry) a
 Taxis, bikes, and e-scooters are **not allowed**.
 
 The game unfolds in three phases:
----
+
 ## Phase 1: Head Start *(0:00 – 0:15)*
 
 - The **Escapers** start moving immediately
