@@ -1,49 +1,32 @@
-## Freeze (Blue Markers)
+### 🔵 Freeze
+- **Effect:** Opponents must stop moving for {{FREEZE_DURATION}} minutes. *(Escapers activating this affect all Chaser teams)*
+- **Available to:** Everyone — Escapers & Chasers
+- **Cooldown:** Cannot be activated within {{COOLDOWN}} minutes after any Freeze or Live Location
+- **Confirmation required:** The frozen team must confirm in the app that they have stopped — the freeze does not activate automatically
+- **If frozen in transit:** Exit at the next station, then confirm the freeze
 
-**Effect:** Target team must **stop moving for {{FREEZE_DURATION}} minutes**
+---
 
-- The Freeze does **not activate automatically** — frozen team must **confirm** that they stopped moving
-- If frozen while in transport, **exit at next station** and then confirm the freeze
+### 🔴 Live Location
+- **Effect:** Opponents' live GPS location is revealed on the map for {{TRACKING_DURATION}} minutes. *(Escapers activating this affect all Chaser teams)*
+- **Available to:** Everyone — Escapers & Chasers
+- **Cooldown:** Cannot be activated within {{COOLDOWN}} minutes after any Freeze or Live Location
 
-**Who Can Use It?** Escapers & Chasers
+---
 
-**Cooldown:** Cannot be used within **{{COOLDOWN}} minutes** after "Live Tracking" or "Freeze"
-
-## Live Location (Red Markers)
-
-**Effect:** The targeted team's **live location gets displayed for {{TRACKING_DURATION}} minutes**
-
-**Who Can Use It?** Escapers & Chasers
-
-**Cooldown:** Cannot be used within **{{COOLDOWN}} minutes** after "Freeze" or "Live Tracking"
-
-## Transport Clue (Purple Marker)
-
-**Effect:** The targeted team must **reveal their last transportation route**
-
-- If currently in transport, reveal:
-  - Current mode of transportation
-  - Where you started
+### 🟣 Transport Clue
+- **Effect:** Opponents must reveal their last transport route
+- **If currently in transit, reveal:**
+  - Mode of transport
+  - Where you boarded
   - The last station you passed
+- **Available to:** Everyone — Escapers & Chasers
+- **Cooldown:** None
 
-**Who Can Use It?** Escapers & Chasers
+---
 
-**Cooldown:** No cooldown
-
-## Surveillance (Green Markers) *(Chasers Only)*
-
-**Effect:** The **Escapers** must send a **360° video** of their current location
-
-**Who Can Use It?** Chasers only
-
-**Cooldown:** No cooldown
-
-## Usage Strategy
-
-To **activate a Clue Point**, a team must:
-
-1. Physically go to the point
-2. Select it on the map in the App
-3. Press the activation button
-
-**Important:** Using Clue Points strategically changes the dynamic of the game. Plan carefully!
+### 🟢 Surveillance
+- **Effect:** Escapers must send a 360° video of their current surroundings
+- **Available to:** Chasers only
+- **Cooldown:** None
+- **Fair play:** Hold the phone up clearly and turn slowly to show the full surroundings. Aim for a 6–8 second video.
