@@ -1,17 +1,19 @@
-The game is divided into three distinct phases, each with different rules and strategies.
+Players navigate the city using **public transport** (metro, bus, tram, ferry) and on foot.
+Taxis, bikes, and e-scooters are **not allowed**.
 
-## Phase 1: Head Start (First 15 minutes)
+The game unfolds in three phases:
+---
+## Phase 1: Head Start *(0:00 – 0:15)*
 
-- The **Escapers** are free to move immediately once the game starts
-- The **Chaser teams** must wait **15 minutes** before beginning their pursuit
+- The **Escapers** start moving immediately
+- The **Chasers** must wait 15 minutes before beginning their pursuit. Use this time to plan
 
-## Phase 2: Chase (15min to 1h30min)
+## Phase 2: The Chase *(0:15 – 1:30/45)*
 
-- The **Chasers** are now actively tracking down the **Escapers**
-- The **Clue Points** help track down the Escapers
-- Activate the Clue Points in the city (see **Clue Points** section for more information)
+- The **Chasers** actively track down the **Escapers**
+- Both teams can use **Clue Points** across the city to gain strategic advantages *(see Clue Points)*
 
-## Phase 3: Closing In (Final {{CLOSING_IN}} minutes)
+## Phase 3: Closing In *(Final {{CLOSING_IN}} minutes)*
 
-- The **Escapers** are **only allowed to move on foot** from this point onward
-- The chase intensifies as the Chasers narrow down the Escapers' location
+- The **Escapers** may no longer use public transport. **Walking only**
+- The Chase intensifies as the Chasers narrow down the Escapers' location
