@@ -1,16 +1,14 @@
-All players gather at **Sergels torg (T-Centralen)** before the game begins.
+All players gather at the **starting point** before the game begins.
 
 ## Teams
 
 - **Escapers:** 1 team
-- **Chasers:** 3 teams, working together to track down the Escapers
+- **Chasers:** 3 teams, working together to track down the Escapers *(2 teams also possible but harder for the Chasers)*
 - **Team Size:** 1–4 players per team
-- **Team Cohesion:** Teams must stay together at all times
+- **Team Cohesion:** Each team moves freely and independently, but all players within a team must stay together at all times.
 
-## Game Duration & Winning Conditions
+## Before you start
 
-- **Maximum Duration:** 2 hours
-- **Chasers win** if they catch the Escapers (within talking distance)
-- **Escapers win** if they avoid capture for the full 2 hours
-
-**Note:** The game emphasizes strategy, transportation management, and quick decision-making. **Don't run — outsmart your opponents!**
+- **Create a Messenger group** including all Chaser teams to coordinate during the game
+- Each player needs a valid **public transport ticket**
+- Assign roles and form teams before the game begins
