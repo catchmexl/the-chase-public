@@ -8,7 +8,7 @@ The game unfolds in three phases:
 - The **Escapers** start moving immediately
 - The **Chasers** must wait 15 minutes before beginning their pursuit. Use this time to plan
 
-## Phase 2: The Chase *(0:15 – 1:30/45)*
+## Phase 2: The Chase *(0:15 – {{PHASE_2_END}})*
 
 - The **Chasers** actively track down the **Escapers**
 - Both teams can use **Clue Points** across the city to gain strategic advantages *(see Clue Points)*
