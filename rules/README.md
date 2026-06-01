@@ -1,27 +1,32 @@
 # The Chase - Game Rules
 
-This directory contains the official game rules for **The Chase**, an urban chase game where Escapers try to evade Chasers within a city.
+This directory contains the official game rules for **The Chase**.
 
 ## Structure
 
-The rules are organized into individual markdown files for maintainability and are managed through a manifest file.
+English remains the default and backward-compatible source at the root:
 
-### Files
+- `rules.json`
+- `objective.md`
+- `preparation.md`
+- `gameplay.md`
+- `clue-points.md`
+- `types-of-clue-points.md`
+- `tips-chasers.md`
+- `tips-escapers.md`
+- `fair-play.md`
 
-- **`rules.json`** - Manifest file defining all rule sections, their order, and metadata
-- **`rules_manifest.schema.json`** - JSON Schema for validating the manifest structure
-- **Individual rule files:**
-  - `objective.md` - Game objective and winning conditions
-  - `preparation.md` - Team setup and game duration
-  - `gameplay.md` - Three phases of gameplay
-  - `clue-points.md` - Clue Points and their effects
-  - `tips-chasers.md` - Strategic tips for Chaser teams
-  - `tips-escapers.md` - Strategic tips for Escaper team
-  - `fair-play.md` - Fair play rules and safety guidelines
+Additional locales live in subdirectories and use the same manifest shape:
+
+- `de/rules.json`
+- `de/*.md`
+
+Every localized manifest resolves its `file` entries relative to its own
+directory.
 
 ## Manifest Structure
 
-The `rules.json` manifest follows this structure:
+Each `rules.json` follows this structure:
 
 ```json
 {
@@ -36,127 +41,91 @@ The `rules.json` manifest follows this structure:
       "order": 1,
       "description": "The main goal of the game"
     }
-    // ... more rules
   ]
 }
 ```
 
-### Field Descriptions
+Field notes:
 
-- **`version`** - Semantic version number (MAJOR.MINOR.PATCH)
-- **`lastUpdated`** - ISO 8601 timestamp of last update
-- **`rules`** - Array of rule sections with:
-  - **`id`** - Unique identifier (kebab-case)
-  - **`title`** - Display title for the section
-  - **`file`** - Markdown filename
-  - **`category`** - One of: `core`, `mechanics`, `tips`, `conduct`
-  - **`order`** - Display order (lower numbers first)
-  - **`description`** - Optional short description
+- `version`: semantic version (`MAJOR.MINOR.PATCH`)
+- `lastUpdated`: ISO 8601 timestamp
+- `rules`: ordered rule sections
+- `id`: stable kebab-case identifier
+- `title`: display title for the section
+- `file`: markdown filename relative to the current manifest directory
+- `category`: one of `core`, `mechanics`, `tips`, `conduct`
+- `order`: display order
+- `description`: optional short description
 
-## Categories
+## Locale Workflow
 
-Rules are grouped into four categories:
+When adding a new locale:
 
-1. **Core** - Essential game rules (objective, preparation, gameplay)
-2. **Mechanics** - Game mechanics and features (clue points)
-3. **Tips** - Strategic advice for players
-4. **Conduct** - Fair play and safety guidelines
+1. Create `rules/<locale>/`.
+2. Copy the current English `rules.json` into `rules/<locale>/rules.json`.
+3. Copy the referenced English markdown files into `rules/<locale>/`.
+4. Translate the localized copies in place.
+5. Run `node validate-rules.js`.
+
+For the initial localization scaffold, it is valid to copy English content first
+and translate later.
 
 ## Updating Rules
 
-### 1. Edit Content
+### Edit content
 
-Update the relevant `.md` file with your changes. Follow these guidelines:
+- Update the relevant `.md` file in the root English set or in a locale folder.
+- Keep markdown concise and readable.
+- Use headings and bullets where appropriate.
 
-- Use proper markdown formatting
-- Keep content concise and clear
-- Use bullet points for lists
-- Bold important terms
-- Keep line length reasonable (80-100 characters)
+### Update manifests
 
-### 2. Update Manifest
+If adding, removing, or reordering sections:
 
-If adding/removing/reordering rules:
+1. Update the affected `rules.json`.
+2. Keep the same section ordering across locales unless there is a clear product
+   reason not to.
+3. Update `version` and `lastUpdated`.
 
-1. Edit `rules.json`
-2. Update `version` number:
-   - **MAJOR**: Breaking changes (structure changes, removed rules)
-   - **MINOR**: New rules or significant additions
-   - **PATCH**: Small fixes, typos, clarifications
-3. Update `lastUpdated` timestamp
+### Validate
 
-### 3. Validate Changes
-
-Run the validation script (if available):
+Run:
 
 ```bash
+cd rules
 node validate-rules.js
 ```
 
-Or manually validate:
-1. Check that all files referenced in `rules.json` exist
-2. Verify JSON syntax with a validator
-3. Ensure markdown renders correctly
-4. Check that manifest follows the schema
+The validator checks:
 
-## Schema Validation
-
-The manifest structure can be validated against `rules_manifest.schema.json`:
-
-```bash
-# Using ajv-cli
-ajv validate -s rules_manifest.schema.json -d rules.json
-
-# Using online validators
-# Visit: https://www.jsonschemavalidator.net/
-```
+- every `rules.json` under `rules/**`
+- referenced markdown files relative to each manifest directory
+- duplicate IDs, orders, and files inside a manifest
+- orphaned markdown files inside each manifest directory
 
 ## App Integration
 
-The mobile app fetches rules from this repository via:
+The mobile app fetches:
 
-```
-https://raw.githubusercontent.com/catchmexl/the-chase-public/main/rules/rules.json
-```
+- English default: `https://raw.githubusercontent.com/catchmexl/the-chase-public/main/rules/rules.json`
+- Localized manifests: `https://raw.githubusercontent.com/catchmexl/the-chase-public/main/rules/<locale>/rules.json`
 
-The app will:
-1. Fetch the manifest
-2. Download individual markdown files
-3. Cache for 24 hours
-4. Display in the app with proper formatting
+The app then:
+
+1. Fetches the locale-specific manifest when available
+2. Downloads markdown files listed in that manifest
+3. Falls back to the root English manifest/content when localized content is
+   missing
+4. Caches content per locale
 
 ## Versioning
 
 We follow [Semantic Versioning](https://semver.org/):
 
-- **1.0.0** - Initial release
-- **1.0.1** - Patch: Bug fixes, typos
-- **1.1.0** - Minor: New features, additions
-- **2.0.0** - Major: Breaking changes
-
-## Maintenance
-
-### Regular Tasks
-
-- [ ] Review rules quarterly for clarity
-- [ ] Update based on player feedback
-- [ ] Check all links are valid
-- [ ] Validate manifest structure
-
-
-### Breaking Changes
-
-If making breaking changes to the manifest structure:
-
-1. Increment **MAJOR** version
-2. Update schema file
-3. Coordinate with app development team
-4. Maintain backward compatibility when possible
+- `PATCH`: typo fixes and clarifications
+- `MINOR`: new rule sections or meaningful content additions
+- `MAJOR`: breaking manifest structure changes
 
 ## License
 
 © 2025 The Chase. All rights reserved.
-
-## Contact
-
-For questions or suggestions about the rules, please open an issue in this repository.

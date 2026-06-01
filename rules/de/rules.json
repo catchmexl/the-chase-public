@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-10-29T12:00:00Z",
+  "rules": [
+    {
+      "id": "objective",
+      "title": "Objective",
+      "file": "objective.md",
+      "category": "core",
+      "order": 1,
+      "description": "The main goal of the game for Escapers and Chasers"
+    },
+    {
+      "id": "preparation",
+      "title": "Preparation",
+      "file": "preparation.md",
+      "category": "core",
+      "order": 2,
+      "description": "Game setup, team formation, and winning conditions"
+    },
+    {
+      "id": "gameplay",
+      "title": "Game Play",
+      "file": "gameplay.md",
+      "category": "core",
+      "order": 3,
+      "description": "Three phases of gameplay from head start to closing in"
+    },
+    {
+      "id": "clue-points",
+      "title": "Clue Points",
+      "file": "clue-points.md",
+      "category": "mechanics",
+      "order": 4,
+      "description": "Clue points and their effects on gameplay"
+    },
+    {
+      "id": "types-of-clue-points",
+      "title": "Types of Clue Points",
+      "file": "types-of-clue-points.md",
+      "category": "mechanics",
+      "order": 5,
+      "description": "The effect of clue points (Freeze, Live Location, etc.)"
+    },
+    {
+      "id": "tips-chasers",
+      "title": "Tips for the Chasers",
+      "file": "tips-chasers.md",
+      "category": "tips",
+      "order": 6,
+      "description": "Strategic advice for Chaser teams"
+    },
+    {
+      "id": "tips-escapers",
+      "title": "Tips for the Escapers",
+      "file": "tips-escapers.md",
+      "category": "tips",
+      "order": 7,
+      "description": "Strategic advice for the Escaper team"
+    },
+    {
+      "id": "fair-play",
+      "title": "Fair Play",
+      "file": "fair-play.md",
+      "category": "conduct",
+      "order": 8,
+      "description": "Rules for fair play, safety, and honesty"
+    }
+  ]
+}

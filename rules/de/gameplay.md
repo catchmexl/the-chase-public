@@ -1,0 +1,17 @@
+The game is divided into three distinct phases, each with different rules and strategies.
+
+## Phase 1: Head Start (First 15 minutes)
+
+- The **Escapers** are free to move immediately once the game starts
+- The **Chaser teams** must wait **15 minutes** before beginning their pursuit
+
+## Phase 2: Chase (15min to 1h30min)
+
+- The **Chasers** are now actively tracking down the **Escapers**
+- The **Clue Points** help track down the Escapers
+- Activate the Clue Points in the city (see **Clue Points** section for more information)
+
+## Phase 3: Closing In (Final {{CLOSING_IN}} minutes)
+
+- The **Escapers** are **only allowed to move on foot** from this point onward
+- The chase intensifies as the Chasers narrow down the Escapers' location

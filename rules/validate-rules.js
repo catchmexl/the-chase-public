@@ -2,28 +2,28 @@
 
 /**
  * Validation Script for The Chase Rules
- * 
+ *
  * Validates:
- * - JSON manifest structure against schema
- * - All referenced markdown files exist
- * - Markdown files are valid
- * - No duplicate IDs or orders
+ * - Every locale-aware rules manifest discovered under the rules directory
+ * - All referenced markdown files exist relative to each manifest directory
+ * - Markdown files are non-empty
+ * - No duplicate IDs, orders, or files within a manifest
+ * - No orphaned markdown files within a manifest directory
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const RULES_DIR = path.join(__dirname);
-const MANIFEST_FILE = path.join(RULES_DIR, 'rules.json');
+const RULES_DIR = __dirname;
+const ROOT_MANIFEST_FILE = path.join(RULES_DIR, 'rules.json');
 const SCHEMA_FILE = path.join(RULES_DIR, 'rules_manifest.schema.json');
 
-// Colors for console output
 const colors = {
   reset: '\x1b[0m',
   red: '\x1b[31m',
   green: '\x1b[32m',
   yellow: '\x1b[33m',
-  blue: '\x1b[34m'
+  blue: '\x1b[34m',
 };
 
 let hasErrors = false;
@@ -44,78 +44,91 @@ function warning(message) {
 }
 
 function success(message) {
-  log(`${message}`, colors.green);
+  log(message, colors.green);
 }
 
 function info(message) {
-  log(`${message}`, colors.blue);
+  log(message, colors.blue);
 }
 
-// Validate JSON syntax
-function validateJSON(filePath, name) {
+function validateJSON(filePath, label) {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
-    JSON.parse(content);
-    success(`${name} is valid JSON`);
-    return JSON.parse(content);
+    const json = JSON.parse(content);
+    success(`${label} is valid JSON`);
+    return json;
   } catch (err) {
-    error(`${name} has invalid JSON: ${err.message}`);
+    error(`${label} has invalid JSON: ${err.message}`);
     return null;
   }
 }
 
-// Check if file exists
 function checkFileExists(filePath, description) {
   if (fs.existsSync(filePath)) {
     success(`${description} exists`);
     return true;
-  } else {
-    error(`${description} not found: ${filePath}`);
-    return false;
   }
+
+  error(`${description} not found: ${filePath}`);
+  return false;
 }
 
-// Validate manifest structure
-function validateManifestStructure(manifest) {
-  info('Validating manifest structure...');
+function discoverManifestFiles(dirPath) {
+  const manifestFiles = [];
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
 
-  // Check required fields
-  if (!manifest.version) {
-    error('Manifest missing "version" field');
-  } else if (!/^\d+\.\d+\.\d+$/.test(manifest.version)) {
-    error(`Invalid version format: ${manifest.version} (expected X.Y.Z)`);
-  } else {
-    success(`Version: ${manifest.version}`);
-  }
+  for (const entry of entries) {
+    const entryPath = path.join(dirPath, entry.name);
 
-  if (!manifest.lastUpdated) {
-    error('Manifest missing "lastUpdated" field');
-  } else {
-    try {
-      new Date(manifest.lastUpdated);
-      success(`Last updated: ${manifest.lastUpdated}`);
-    } catch (err) {
-      error(`Invalid date format: ${manifest.lastUpdated}`);
+    if (entry.isDirectory()) {
+      manifestFiles.push(...discoverManifestFiles(entryPath));
+      continue;
+    }
+
+    if (entry.isFile() && entry.name === 'rules.json') {
+      manifestFiles.push(entryPath);
     }
   }
 
+  manifestFiles.sort((a, b) => a.localeCompare(b));
+  return manifestFiles;
+}
+
+function validateManifestStructure(manifest, label) {
+  info(`Validating manifest structure for ${label}...`);
+
+  if (!manifest.version) {
+    error(`${label}: missing "version" field`);
+  } else if (!/^\d+\.\d+\.\d+$/.test(manifest.version)) {
+    error(`${label}: invalid version format ${manifest.version} (expected X.Y.Z)`);
+  } else {
+    success(`${label}: version ${manifest.version}`);
+  }
+
+  if (!manifest.lastUpdated) {
+    error(`${label}: missing "lastUpdated" field`);
+  } else if (Number.isNaN(Date.parse(manifest.lastUpdated))) {
+    error(`${label}: invalid date format ${manifest.lastUpdated}`);
+  } else {
+    success(`${label}: last updated ${manifest.lastUpdated}`);
+  }
+
   if (!Array.isArray(manifest.rules)) {
-    error('Manifest "rules" must be an array');
+    error(`${label}: "rules" must be an array`);
     return false;
   }
 
   if (manifest.rules.length === 0) {
-    error('Manifest "rules" array is empty');
+    error(`${label}: "rules" array is empty`);
     return false;
   }
 
-  success(`Found ${manifest.rules.length} rule sections`);
+  success(`${label}: found ${manifest.rules.length} rule sections`);
   return true;
 }
 
-// Validate rule sections
-function validateRuleSections(rules) {
-  info('Validating rule sections...');
+function validateRuleSections(rules, manifestDir, label) {
+  info(`Validating rule sections for ${label}...`);
 
   const ids = new Set();
   const orders = new Set();
@@ -124,195 +137,192 @@ function validateRuleSections(rules) {
 
   rules.forEach((rule, index) => {
     const ruleNum = index + 1;
-    
-    // Check required fields
+
     if (!rule.id) {
-      error(`Rule #${ruleNum}: Missing "id" field`);
+      error(`${label} rule #${ruleNum}: missing "id" field`);
     } else {
       if (!/^[a-z][a-z0-9-]*[a-z0-9]$/.test(rule.id)) {
-        error(`Rule #${ruleNum}: Invalid id format "${rule.id}" (use kebab-case)`);
+        error(`${label} rule #${ruleNum}: invalid id "${rule.id}" (use kebab-case)`);
       }
       if (ids.has(rule.id)) {
-        error(`Rule #${ruleNum}: Duplicate id "${rule.id}"`);
+        error(`${label} rule #${ruleNum}: duplicate id "${rule.id}"`);
       }
       ids.add(rule.id);
     }
 
     if (!rule.title) {
-      error(`Rule #${ruleNum} (${rule.id}): Missing "title" field`);
+      error(`${label} rule #${ruleNum} (${rule.id}): missing "title" field`);
     } else if (rule.title.length > 100) {
-      warning(`Rule #${ruleNum} (${rule.id}): Title too long (${rule.title.length} chars)`);
+      warning(`${label} rule #${ruleNum} (${rule.id}): title too long (${rule.title.length} chars)`);
     }
 
     if (!rule.file) {
-      error(`Rule #${ruleNum} (${rule.id}): Missing "file" field`);
+      error(`${label} rule #${ruleNum} (${rule.id}): missing "file" field`);
     } else {
       if (!/^[a-z0-9-]+\.md$/.test(rule.file)) {
-        error(`Rule #${ruleNum} (${rule.id}): Invalid file format "${rule.file}"`);
+        error(`${label} rule #${ruleNum} (${rule.id}): invalid file "${rule.file}"`);
       }
       if (files.has(rule.file)) {
-        error(`Rule #${ruleNum} (${rule.id}): Duplicate file "${rule.file}"`);
+        error(`${label} rule #${ruleNum} (${rule.id}): duplicate file "${rule.file}"`);
       }
       files.add(rule.file);
 
-      // Check if file exists
-      const filePath = path.join(RULES_DIR, rule.file);
-      if (!checkFileExists(filePath, `Rule file "${rule.file}"`)) {
-        // Already logged as error
-      }
+      const filePath = path.join(manifestDir, rule.file);
+      checkFileExists(filePath, `${label} rule file "${rule.file}"`);
     }
 
     if (!rule.category) {
-      error(`Rule #${ruleNum} (${rule.id}): Missing "category" field`);
+      error(`${label} rule #${ruleNum} (${rule.id}): missing "category" field`);
     } else if (!validCategories.includes(rule.category)) {
-      error(`Rule #${ruleNum} (${rule.id}): Invalid category "${rule.category}"`);
+      error(`${label} rule #${ruleNum} (${rule.id}): invalid category "${rule.category}"`);
     }
 
     if (rule.order === undefined || rule.order === null) {
-      error(`Rule #${ruleNum} (${rule.id}): Missing "order" field`);
+      error(`${label} rule #${ruleNum} (${rule.id}): missing "order" field`);
     } else {
       if (typeof rule.order !== 'number' || rule.order < 1) {
-        error(`Rule #${ruleNum} (${rule.id}): Invalid order ${rule.order} (must be >= 1)`);
+        error(`${label} rule #${ruleNum} (${rule.id}): invalid order ${rule.order}`);
       }
       if (orders.has(rule.order)) {
-        warning(`Rule #${ruleNum} (${rule.id}): Duplicate order ${rule.order}`);
+        warning(`${label} rule #${ruleNum} (${rule.id}): duplicate order ${rule.order}`);
       }
       orders.add(rule.order);
     }
 
     if (rule.description && rule.description.length > 200) {
-      warning(`Rule #${ruleNum} (${rule.id}): Description too long (${rule.description.length} chars)`);
+      warning(
+        `${label} rule #${ruleNum} (${rule.id}): description too long (${rule.description.length} chars)`,
+      );
     }
 
-    success(`Rule #${ruleNum}: ${rule.id} - ${rule.title}`);
+    success(`${label} rule #${ruleNum}: ${rule.id} - ${rule.title}`);
   });
 }
 
-// Validate markdown files
-function validateMarkdownFiles(rules) {
-  info('Validating markdown content...');
+function validateMarkdownFiles(rules, manifestDir, label) {
+  info(`Validating markdown content for ${label}...`);
 
-  rules.forEach(rule => {
-    const filePath = path.join(RULES_DIR, rule.file);
-    
+  rules.forEach((rule) => {
+    const filePath = path.join(manifestDir, rule.file);
+
     if (!fs.existsSync(filePath)) {
-      // Already reported in previous check
       return;
     }
 
     try {
       const content = fs.readFileSync(filePath, 'utf8');
-      
+
       if (content.trim().length === 0) {
-        error(`${rule.file}: File is empty`);
+        error(`${label} ${rule.file}: file is empty`);
         return;
       }
 
-      // Check for basic markdown structure
       if (!content.includes('#')) {
-        warning(`${rule.file}: No headings found`);
+        warning(`${label} ${rule.file}: no headings found`);
       }
 
-      // Check file size (warn if > 50KB)
       const sizeKB = Buffer.byteLength(content, 'utf8') / 1024;
       if (sizeKB > 50) {
-        warning(`${rule.file}: Large file size (${sizeKB.toFixed(1)} KB)`);
+        warning(`${label} ${rule.file}: large file size (${sizeKB.toFixed(1)} KB)`);
       }
 
-      success(`${rule.file}: Valid (${sizeKB.toFixed(1)} KB)`);
+      success(`${label} ${rule.file}: valid (${sizeKB.toFixed(1)} KB)`);
     } catch (err) {
-      error(`${rule.file}: Error reading file - ${err.message}`);
+      error(`${label} ${rule.file}: error reading file - ${err.message}`);
     }
   });
 }
 
-// Check for orphaned markdown files
-function checkOrphanedFiles(rules) {
-  info('Checking for orphaned files...');
+function checkOrphanedFiles(rules, manifestDir, label) {
+  info(`Checking for orphaned files in ${label}...`);
 
-  const manifestFiles = new Set(rules.map(r => r.file));
-  const allFiles = fs.readdirSync(RULES_DIR)
-    .filter(f => f.endsWith('.md') && f !== 'README.md' && f !== 'CHANGELOG.md');
+  const manifestFiles = new Set(rules.map((rule) => rule.file));
+  const allMarkdownFiles = fs
+    .readdirSync(manifestDir)
+    .filter((file) => file.endsWith('.md') && file !== 'README.md' && file !== 'CHANGELOG.md');
 
-  const orphaned = allFiles.filter(f => !manifestFiles.has(f));
+  const orphanedFiles = allMarkdownFiles.filter((file) => !manifestFiles.has(file));
 
-  if (orphaned.length > 0) {
-    orphaned.forEach(file => {
-      warning(`Orphaned file not in manifest: ${file}`);
+  if (orphanedFiles.length > 0) {
+    orphanedFiles.forEach((file) => {
+      warning(`${label}: orphaned file not in manifest: ${file}`);
     });
-  } else {
-    success('No orphaned markdown files');
+    return;
   }
+
+  success(`${label}: no orphaned markdown files`);
 }
 
-// Main validation
-function main() {
-  console.log('\n' + '='.repeat(60));
-  log('The Chase Rules Validator', colors.blue);
-  console.log('='.repeat(60) + '\n');
+function validateManifestFile(manifestPath) {
+  const relativeManifestPath = path.relative(RULES_DIR, manifestPath) || 'rules.json';
+  const label = relativeManifestPath === 'rules.json' ? 'root rules' : relativeManifestPath;
+  const manifestDir = path.dirname(manifestPath);
 
-  // Check manifest file exists
-  if (!checkFileExists(MANIFEST_FILE, 'Manifest file')) {
-    log('\n❌ Validation FAILED\n', colors.red);
-    process.exit(1);
-  }
+  console.log('');
+  info(`Validating ${label}`);
 
-  // Check schema file exists
-  if (!checkFileExists(SCHEMA_FILE, 'Schema file')) {
-    log('\n❌ Validation FAILED\n', colors.red);
-    process.exit(1);
-  }
-
-  // Validate manifest JSON
-  const manifest = validateJSON(MANIFEST_FILE, 'Manifest');
+  const manifest = validateJSON(manifestPath, `Manifest ${label}`);
   if (!manifest) {
-    log('\n❌ Validation FAILED\n', colors.red);
+    return;
+  }
+
+  if (!validateManifestStructure(manifest, label)) {
+    return;
+  }
+
+  console.log('');
+  validateRuleSections(manifest.rules, manifestDir, label);
+
+  console.log('');
+  validateMarkdownFiles(manifest.rules, manifestDir, label);
+
+  console.log('');
+  checkOrphanedFiles(manifest.rules, manifestDir, label);
+}
+
+function main() {
+  console.log(`\n${'='.repeat(60)}`);
+  log('The Chase Rules Validator', colors.blue);
+  console.log(`${'='.repeat(60)}\n`);
+
+  if (!checkFileExists(ROOT_MANIFEST_FILE, 'Root manifest file')) {
+    log('\nValidation FAILED\n', colors.red);
     process.exit(1);
   }
 
-  // Validate schema JSON
+  if (!checkFileExists(SCHEMA_FILE, 'Schema file')) {
+    log('\nValidation FAILED\n', colors.red);
+    process.exit(1);
+  }
+
   const schema = validateJSON(SCHEMA_FILE, 'Schema');
   if (!schema) {
-    log('\n❌ Validation FAILED\n', colors.red);
+    log('\nValidation FAILED\n', colors.red);
     process.exit(1);
   }
 
-  console.log('');
-
-  // Validate manifest structure
-  if (!validateManifestStructure(manifest)) {
-    log('\n❌ Validation FAILED\n', colors.red);
+  const manifestFiles = discoverManifestFiles(RULES_DIR);
+  if (manifestFiles.length === 0) {
+    error('No rules.json manifests found');
     process.exit(1);
   }
 
-  console.log('');
+  success(`Discovered ${manifestFiles.length} manifest file(s)`);
 
-  // Validate rule sections
-  validateRuleSections(manifest.rules);
+  manifestFiles.forEach(validateManifestFile);
 
-  console.log('');
-
-  // Validate markdown files
-  validateMarkdownFiles(manifest.rules);
-
-  console.log('');
-
-  // Check for orphaned files
-  checkOrphanedFiles(manifest.rules);
-
-  console.log('\n' + '='.repeat(60));
-  
+  console.log(`\n${'='.repeat(60)}`);
   if (hasErrors) {
-    log('❌ Validation FAILED with errors', colors.red);
+    log('Validation FAILED with errors', colors.red);
     process.exit(1);
-  } else if (hasWarnings) {
-    log('⚠️  Validation PASSED with warnings', colors.yellow);
-    process.exit(0);
-  } else {
-    log('✅ Validation PASSED', colors.green);
+  }
+
+  if (hasWarnings) {
+    log('Validation PASSED with warnings', colors.yellow);
     process.exit(0);
   }
+
+  log('Validation PASSED', colors.green);
 }
 
-// Run validation
 main();

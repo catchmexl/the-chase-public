@@ -28,16 +28,10 @@ jobs:
         cd rules
         node validate-rules.js
 
-    - name: Validate JSON schema
-      uses: cardinalby/schema-validator-action@v3
-      with:
-        schema: 'rules/rules_manifest.schema.json'
-        file: 'rules/rules.json'
-
     - name: Check markdown lint
       uses: DavidAnson/markdownlint-cli2-action@v14
       with:
-        globs: 'rules/*.md'
+        globs: 'rules/**/*.md'
         config: |
           {
             "default": true,
