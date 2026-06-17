@@ -1,11 +1,8 @@
-Throughout the game, players can interact with **Clue Points** marked on the map. Activating a Clue Point gives teams specific advantages.
+Während des Spiels sind **Hinweise** auf der Karte markiert. Gehe zu einem Hinweis und aktiviert ihn, um einen strategischen Vorteil zu erhalten. Setzt sie aber mit Bedacht ein.
 
-## How Clue Points Work
-
-- **Activation:** Teams must physically go to the Clue Point and press **Activate** in the app
-- **Usage:** Each Clue Point can only be used **once per game**
-- **Effect Direction:**
-  - If a **Chaser team** activates a Clue Point, the **Escapers** are affected
-  - If the **Escaper team** activates a Clue Point, **all Chaser teams** are affected
-- **Cooldowns:** Some Clue Points have cooldowns to prevent immediate repeated use
-- **Location Reveal:** Activating a Clue Point **reveals your location** in the game log, so use them wisely!
+- **Aktivierung:** Geht zum Ort des Hinweises und klickt in der App auf **Aktivieren**
+- **Nur einmal nutzbar:** Jeder einzelne Hinweis kann nur einmal aktiviert werden. Sobald er genutzt wurde, ist er für den Rest des Spiels deaktiviert. Andere Hinweise desselben Typs an anderen Orten auf der Karte bleiben verfügbar
+- **Wer wird betroffen:**
+  - Aktiviert ein **Jäger-Team** einen Hinweis, betrifft der Effekt die **Gejagten**
+  - Aktiviert das **Gejagte**-Team einen Hinweis, betrifft der Effekt **alle Jäger-Teams**
+- **Standort aufgedeckt:** Wenn du einen Hinweis aktivierst, wird das auf der Karte angezeigt. Deine Gegner wissen also, welchen Hinweis du aktiviert hast.

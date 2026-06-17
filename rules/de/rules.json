@@ -1,62 +1,54 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2025-10-29T12:00:00Z",
+  "version": "1.0.1",
+  "lastUpdated": "2026-06-16T12:00:00Z",
   "rules": [
     {
       "id": "objective",
-      "title": "Objective",
+      "title": "Ziel",
       "file": "objective.md",
       "category": "core",
       "order": 1,
-      "description": "The main goal of the game for Escapers and Chasers"
+      "description": "Das Hauptziel des Spiels für Gejagte und Jäger"
     },
     {
       "id": "preparation",
-      "title": "Preparation",
+      "title": "Vorbereitung",
       "file": "preparation.md",
       "category": "core",
       "order": 2,
-      "description": "Game setup, team formation, and winning conditions"
+      "description": "Spielaufbau, Teambildung und Gewinnbedingungen"
     },
     {
       "id": "gameplay",
-      "title": "Game Play",
+      "title": "Spielablauf",
       "file": "gameplay.md",
       "category": "core",
       "order": 3,
-      "description": "Three phases of gameplay from head start to closing in"
+      "description": "Die drei Spielphasen vom Vorsprung bis zur Schlussphase"
     },
     {
       "id": "clue-points",
-      "title": "Clue Points",
+      "title": "Hinweise",
       "file": "clue-points.md",
       "category": "mechanics",
       "order": 4,
-      "description": "Clue points and their effects on gameplay"
+      "description": "Hinweise und ihre Auswirkungen auf den Spielablauf"
     },
     {
       "id": "types-of-clue-points",
-      "title": "Types of Clue Points",
+      "title": "Arten von Hinweisen",
       "file": "types-of-clue-points.md",
       "category": "mechanics",
       "order": 5,
-      "description": "The effect of clue points (Freeze, Live Location, etc.)"
+      "description": "Die Effekte der Hinweise wie Einfrieren, Ortung und mehr"
     },
     {
-      "id": "tips-chasers",
-      "title": "Tips for the Chasers",
-      "file": "tips-chasers.md",
+      "id": "tips",
+      "title": "Tipps",
+      "file": "tips.md",
       "category": "tips",
       "order": 6,
-      "description": "Strategic advice for Chaser teams"
-    },
-    {
-      "id": "tips-escapers",
-      "title": "Tips for the Escapers",
-      "file": "tips-escapers.md",
-      "category": "tips",
-      "order": 7,
-      "description": "Strategic advice for the Escaper team"
+      "description": "Tipps"
     },
     {
       "id": "fair-play",
@@ -64,7 +56,7 @@
       "file": "fair-play.md",
       "category": "conduct",
       "order": 8,
-      "description": "Rules for fair play, safety, and honesty"
+      "description": "Regeln für Fair Play, Sicherheit und Ehrlichkeit"
     }
   ]
 }

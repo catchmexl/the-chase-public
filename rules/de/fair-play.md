@@ -1,36 +1,21 @@
-All players are expected to follow these rules to ensure a fair and safe game:
+### Gesperrte Bereiche
 
-## Restricted Areas
+Bleibt jederzeit in **öffentlichen, zugänglichen Bereichen**. Betretet keine Museen, Geschäfte oder Orte mit bezahltem Eintritt.
 
-Players are **not allowed** to enter:
+### Ehrlichkeit & Vertrauen
 
-- Museums
-- Shops
-- Any paid-entry locations
+The Chase basiert auf Vertrauen. Spielt fair:
 
-Stay in public, accessible areas at all times.
+- Bestätigt Effekte von Hinweisen ehrlich, besonders **Einfrieren**
+- Meldet euren Standort und eure Strecke mit öffentlichen Verkehrsmitteln korrekt, wenn ein Hinweis das verlangt
 
-## Honesty & Integrity
+### Sicherheit
 
-- Participants are expected to **follow the rules** and play fairly
-- Report accurately when affected by Clue Points (especially Freeze)
-- Don't hide in restricted areas
-- Be truthful about your location and transportation when required
+- Haltet euch jederzeit an Verkehrsregeln
+- Rennt nicht in vollen oder unsicheren Umgebungen
+- Achtet auf eure Umgebung und respektiert andere Menschen im öffentlichen Raum
 
-## Safety First
+### Respekt
 
-- Players must **obey traffic rules** and prioritize safety at all times
-- Don't run dangerously
-- Be aware of your surroundings
-- Respect pedestrians and other people in public spaces
-
-## Respect
-
-- Be considerate of other teams
-- Don't interfere with non-players
-- Keep noise levels reasonable
-- Follow local laws and regulations
-
----
-
-**Remember: The Chase is about strategy and fun, not breaking rules or endangering safety!**
+- Stört keine Menschen, die nicht mitspielen
+- Haltet euch an lokale Gesetze und Regeln

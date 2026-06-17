@@ -1,49 +1,30 @@
-## Freeze (Blue Markers)
+### 🔵 Einfrieren
 
-**Effect:** Target team must **stop moving for {{FREEZE_DURATION}} minutes**
+- **Effekt:** Gegner müssen für {{FREEZE_DURATION}} Minuten stehen bleiben. _(Wenn die Gejagten das aktivieren, betrifft es alle Jäger-Teams)_
+- **Verfügbar für:** Alle - Gejagte und Jäger
+- **Wartezeit:** Kann innerhalb von {{COOLDOWN}} Minuten nach Einfrieren oder Ortung nicht aktiviert werden
+- **Bestätigung erforderlich:** Das eingefrorene Team muss in der App bestätigen, dass es stehen geblieben ist, erst dann startet die Zeit.
+- **Wenn ihr im Verkehrsmittel eingefroren werdet:** Steigt an der nächsten Station aus und bestätigt erst dann das Einfrieren
 
-- The Freeze does **not activate automatically** — frozen team must **confirm** that they stopped moving
-- If frozen while in transport, **exit at next station** and then confirm the freeze
+### 🔴 Ortung
 
-**Who Can Use It?** Escapers & Chasers
+- **Effekt:** Der Live-GPS-Standort der Gegner wird für {{TRACKING_DURATION}} Minuten auf der Karte angezeigt. _(Wenn die Gejagten das aktivieren, betrifft es alle Jäger-Teams)_
+- **Verfügbar für:** Alle - Gejagte und Jäger
+- **Wartezeit:** Kann innerhalb von {{COOLDOWN}} Minuten nach Einfrieren oder Ortung nicht aktiviert werden
 
-**Cooldown:** Cannot be used within **{{COOLDOWN}} minutes** after "Live Tracking" or "Freeze"
+### 🟣 Ticket Kontrolle
 
-## Live Location (Red Markers)
+- **Effekt:** Gegner müssen ihre letzte Strecke mit öffentlichen Verkehrsmitteln offenlegen
+- **Wenn ihr gerade unterwegs seid, nennt:**
+  - Verkehrsmittel
+  - Wo ihr eingestiegen seid
+  - Die letzte Station, an der ihr vorbeigekommen seid
+- **Verfügbar für:** Alle - Gejagte und Jäger
+- **Wartezeit:** Keine
 
-**Effect:** The targeted team's **live location gets displayed for {{TRACKING_DURATION}} minutes**
+### 🟢 360° Video
 
-**Who Can Use It?** Escapers & Chasers
-
-**Cooldown:** Cannot be used within **{{COOLDOWN}} minutes** after "Freeze" or "Live Tracking"
-
-## Transport Clue (Purple Marker)
-
-**Effect:** The targeted team must **reveal their last transportation route**
-
-- If currently in transport, reveal:
-  - Current mode of transportation
-  - Where you started
-  - The last station you passed
-
-**Who Can Use It?** Escapers & Chasers
-
-**Cooldown:** No cooldown
-
-## Surveillance (Green Markers) *(Chasers Only)*
-
-**Effect:** The **Escapers** must send a **360° video** of their current location
-
-**Who Can Use It?** Chasers only
-
-**Cooldown:** No cooldown
-
-## Usage Strategy
-
-To **activate a Clue Point**, a team must:
-
-1. Physically go to the point
-2. Select it on the map in the App
-3. Press the activation button
-
-**Important:** Using Clue Points strategically changes the dynamic of the game. Plan carefully!
+- **Effekt:** Gejagte müssen ein 360° Video ihrer aktuellen Umgebung senden
+- **Verfügbar für:** Nur Jäger
+- **Wartezeit:** Keine
+- **Fair Play:** Haltet das Handy hoch und dreht euch langsam, damit die Umgebung gut zu sehen ist (ca. 10-15s).

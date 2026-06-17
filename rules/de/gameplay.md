@@ -1,17 +1,19 @@
-The game is divided into three distinct phases, each with different rules and strategies.
+Die Spieler bewegen sich mit **öffentlichen Verkehrsmitteln** und zu Fuß durch die Stadt.
+Taxis, Fahrräder und E-Scooter sind **nicht erlaubt**.
 
-## Phase 1: Head Start (First 15 minutes)
+Das Spiel läuft in drei Phasen ab:
 
-- The **Escapers** are free to move immediately once the game starts
-- The **Chaser teams** must wait **15 minutes** before beginning their pursuit
+## Phase 1: Vorsprung _(0:00 - 0:15)_
 
-## Phase 2: Chase (15min to 1h30min)
+- Die **Gejagten** dürfen sich sofort bewegen
+- Die **Jäger** müssen 15 Minuten warten, bevor sie die Verfolgung aufnehmen. Nutzt diese Zeit zum Planen
 
-- The **Chasers** are now actively tracking down the **Escapers**
-- The **Clue Points** help track down the Escapers
-- Activate the Clue Points in the city (see **Clue Points** section for more information)
+## Phase 2: Die Jagd _(0:15 - {{PHASE_2_END}})_
 
-## Phase 3: Closing In (Final {{CLOSING_IN}} minutes)
+- Die **Jäger** verfolgen die **Gejagten**
+- Beide Teams können **Hinweise** in der Stadt nutzen, um strategische Vorteile zu bekommen _(siehe Hinweise)_
 
-- The **Escapers** are **only allowed to move on foot** from this point onward
-- The chase intensifies as the Chasers narrow down the Escapers' location
+## Phase 3: Schlussphase _({{CLOSING_IN}})_
+
+- Die **Gejagten** dürfen keine öffentlichen Verkehrsmittel mehr nutzen. **Nur noch zu Fuß**
+- Die Verfolgung wird intensiver, während die Jäger die Gejagten umzingeln

@@ -5,6 +5,6 @@ The **Escapers** try to get away, while the **Chasers** attempt to track them do
 
 The game involves strategy, transportation management, and quick decision-making.
 
-*Use the city's transport network, timing, and special actions. Outthink, don't outrun.*
+_Use the city's transport network, timing, and special actions. Outthink, don't outrun._
 
-> 🤝 The Chase runs on sportsmanship — if a Chaser is close enough to call you out, you're caught.
+The Chase runs on sportsmanship — if a Chaser is close enough to call you out, you're caught.

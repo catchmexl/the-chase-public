@@ -9,6 +9,7 @@
  * - Markdown files are non-empty
  * - No duplicate IDs, orders, or files within a manifest
  * - No orphaned markdown files within a manifest directory
+ * - Localized manifests keep the same IDs, files, categories, and order as root
  */
 
 const fs = require('fs');
@@ -97,6 +98,13 @@ function discoverManifestFiles(dirPath) {
 function validateManifestStructure(manifest, label) {
   info(`Validating manifest structure for ${label}...`);
 
+  const allowedManifestFields = ['version', 'lastUpdated', 'rules'];
+  Object.keys(manifest)
+    .filter((field) => !allowedManifestFields.includes(field))
+    .forEach((field) => {
+      error(`${label}: unexpected manifest field "${field}"`);
+    });
+
   if (!manifest.version) {
     error(`${label}: missing "version" field`);
   } else if (!/^\d+\.\d+\.\d+$/.test(manifest.version)) {
@@ -134,9 +142,25 @@ function validateRuleSections(rules, manifestDir, label) {
   const orders = new Set();
   const files = new Set();
   const validCategories = ['core', 'mechanics', 'tips', 'conduct'];
+  const allowedRuleFields = [
+    'id',
+    'title',
+    'file',
+    'category',
+    'order',
+    'content',
+    'description',
+    'deprecated',
+  ];
 
   rules.forEach((rule, index) => {
     const ruleNum = index + 1;
+
+    Object.keys(rule)
+      .filter((field) => !allowedRuleFields.includes(field))
+      .forEach((field) => {
+        error(`${label} rule #${ruleNum} (${rule.id}): unexpected field "${field}"`);
+      });
 
     if (!rule.id) {
       error(`${label} rule #${ruleNum}: missing "id" field`);
@@ -184,7 +208,7 @@ function validateRuleSections(rules, manifestDir, label) {
         error(`${label} rule #${ruleNum} (${rule.id}): invalid order ${rule.order}`);
       }
       if (orders.has(rule.order)) {
-        warning(`${label} rule #${ruleNum} (${rule.id}): duplicate order ${rule.order}`);
+        error(`${label} rule #${ruleNum} (${rule.id}): duplicate order ${rule.order}`);
       }
       orders.add(rule.order);
     }
@@ -217,10 +241,6 @@ function validateMarkdownFiles(rules, manifestDir, label) {
         return;
       }
 
-      if (!content.includes('#')) {
-        warning(`${label} ${rule.file}: no headings found`);
-      }
-
       const sizeKB = Buffer.byteLength(content, 'utf8') / 1024;
       if (sizeKB > 50) {
         warning(`${label} ${rule.file}: large file size (${sizeKB.toFixed(1)} KB)`);
@@ -245,12 +265,79 @@ function checkOrphanedFiles(rules, manifestDir, label) {
 
   if (orphanedFiles.length > 0) {
     orphanedFiles.forEach((file) => {
-      warning(`${label}: orphaned file not in manifest: ${file}`);
+      error(`${label}: orphaned file not in manifest: ${file}`);
     });
     return;
   }
 
   success(`${label}: no orphaned markdown files`);
+}
+
+function validateLocaleMatchesRoot(rootManifest, localizedManifest, label) {
+  if (label === 'root rules') {
+    return;
+  }
+
+  info(`Checking locale manifest parity for ${label}...`);
+
+  const rootRules = rootManifest.rules;
+  const localizedRules = localizedManifest.rules;
+  const rootRulesById = new Map(rootRules.map((rule) => [rule.id, rule]));
+  const localizedRulesById = new Map(localizedRules.map((rule) => [rule.id, rule]));
+  let mismatchCount = 0;
+
+  if (localizedRules.length !== rootRules.length) {
+    error(
+      `${label}: expected ${rootRules.length} rules to match root manifest, found ${localizedRules.length}`,
+    );
+    mismatchCount += 1;
+  }
+
+  rootRules.forEach((rootRule, index) => {
+    const localizedRule = localizedRulesById.get(rootRule.id);
+    if (!localizedRule) {
+      error(`${label}: missing localized rule id "${rootRule.id}"`);
+      mismatchCount += 1;
+      return;
+    }
+
+    const localizedRuleAtIndex = localizedRules[index];
+    if (!localizedRuleAtIndex || localizedRuleAtIndex.id !== rootRule.id) {
+      error(
+        `${label}: rule order mismatch at position ${index + 1}; expected "${rootRule.id}"`,
+      );
+      mismatchCount += 1;
+    }
+
+    ['file', 'category', 'order'].forEach((field) => {
+      if (localizedRule[field] !== rootRule[field]) {
+        error(
+          `${label}: rule "${rootRule.id}" has ${field} "${localizedRule[field]}" but root has "${rootRule[field]}"`,
+        );
+        mismatchCount += 1;
+      }
+    });
+
+    const rootDeprecated = rootRule.deprecated === true;
+    const localizedDeprecated = localizedRule.deprecated === true;
+    if (localizedDeprecated !== rootDeprecated) {
+      error(
+        `${label}: rule "${rootRule.id}" deprecated flag does not match root`,
+      );
+      mismatchCount += 1;
+    }
+  });
+
+  localizedRules.forEach((localizedRule) => {
+    if (!rootRulesById.has(localizedRule.id)) {
+      error(`${label}: extra localized rule id "${localizedRule.id}" is not in root manifest`);
+      mismatchCount += 1;
+    }
+  });
+
+  if (mismatchCount === 0) {
+    success(`${label}: locale manifest matches root IDs, files, categories, and order`);
+  }
 }
 
 function validateManifestFile(manifestPath) {
@@ -278,6 +365,8 @@ function validateManifestFile(manifestPath) {
 
   console.log('');
   checkOrphanedFiles(manifest.rules, manifestDir, label);
+
+  return { label, manifest };
 }
 
 function main() {
@@ -295,7 +384,7 @@ function main() {
     process.exit(1);
   }
 
-  const schema = validateJSON(SCHEMA_FILE, 'Schema');
+  const schema = validateJSON(SCHEMA_FILE, 'Schema contract');
   if (!schema) {
     log('\nValidation FAILED\n', colors.red);
     process.exit(1);
@@ -309,7 +398,29 @@ function main() {
 
   success(`Discovered ${manifestFiles.length} manifest file(s)`);
 
-  manifestFiles.forEach(validateManifestFile);
+  const rootManifestPath = path.resolve(ROOT_MANIFEST_FILE);
+  const sortedManifestFiles = manifestFiles.sort((a, b) => {
+    if (path.resolve(a) === rootManifestPath) {
+      return -1;
+    }
+    if (path.resolve(b) === rootManifestPath) {
+      return 1;
+    }
+    return a.localeCompare(b);
+  });
+
+  const validationResults = sortedManifestFiles
+    .map(validateManifestFile)
+    .filter(Boolean);
+  const rootResult = validationResults.find(
+    (result) => result.label === 'root rules',
+  );
+
+  if (rootResult) {
+    validationResults.forEach((result) => {
+      validateLocaleMatchesRoot(rootResult.manifest, result.manifest, result.label);
+    });
+  }
 
   console.log(`\n${'='.repeat(60)}`);
   if (hasErrors) {

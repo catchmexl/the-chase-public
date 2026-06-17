@@ -1,16 +1,14 @@
-All players gather at **Sergels torg (T-Centralen)** before the game begins.
+Alle Spieler treffen sich vor Spielbeginn am **Startpunkt**.
 
 ## Teams
 
-- **Escapers:** 1 team
-- **Chasers:** 3 teams, working together to track down the Escapers
-- **Team Size:** 1–4 players per team
-- **Team Cohesion:** Teams must stay together at all times
+- **Gejagte:** 1 Team
+- **Jäger:** 3 Teams, die zusammenarbeiten, um die Gejagten aufzuspüren _(2 Teams sind auch möglich, aber schwieriger für die Jäger)_
+- **Teamgröße:** 1-4 Spieler pro Team
+- **Teamzusammenhalt:** Die Teams bewegen sich unabhängig, aber alle Spieler innerhalb eines Teams müssen jederzeit zusammenbleiben.
 
-## Game Duration & Winning Conditions
+## Bevor ihr startet
 
-- **Maximum Duration:** 2 hours
-- **Chasers win** if they catch the Escapers (within talking distance)
-- **Escapers win** if they avoid capture for the full 2 hours
-
-**Note:** The game emphasizes strategy, transportation management, and quick decision-making. **Don't run — outsmart your opponents!**
+- **Erstellt eine Messenger-Gruppe** mit allen Jäger-Teams, um euch während des Spiels abzustimmen
+- Jeder Spieler braucht ein gültiges **Ticket für öffentliche Verkehrsmittel**
+- Verteilt die Rollen und bildet die Teams, bevor das Spiel beginnt

@@ -12,8 +12,7 @@ English remains the default and backward-compatible source at the root:
 - `gameplay.md`
 - `clue-points.md`
 - `types-of-clue-points.md`
-- `tips-chasers.md`
-- `tips-escapers.md`
+- `tips.md`
 - `fair-play.md`
 
 Additional locales live in subdirectories and use the same manifest shape:
@@ -102,6 +101,7 @@ The validator checks:
 - referenced markdown files relative to each manifest directory
 - duplicate IDs, orders, and files inside a manifest
 - orphaned markdown files inside each manifest directory
+- localized manifests match the root manifest IDs, files, categories, and order
 
 ## App Integration
 

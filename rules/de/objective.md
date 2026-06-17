@@ -1,5 +1,8 @@
-The **Escapers** try to get away, while the **Chasers** attempt to track them down within the defined area in the city.
+Die **Gejagten** versuchen zu entkommen, während die **Jäger** versuchen, sie innerhalb des begrenzten Stadtgebiets aufzuspüren.
 
-The **Chasers** win when they spot the **Escapers** and can physically touch them. The game involves **strategy**, **transportation management**, and **quick decision-making**.
+**Jäger gewinnen**, wenn sie die Gejagten finden und nah genug herankommen, um sie eindeutig zu erkennen, ungefähr in Rufweite. Antippen der Gejagten ist nicht nötig.
+**Gejagte gewinnen**, wenn sie bis zum Ablauf der Zeit nicht gefangen werden.
 
-**Don't run — outsmart your opponents!**
+Im Spiel geht es um Strategie, schlaue Nutzung der öffentlichen Verkehrsmittel und schnelle Entscheidungen.
+
+_Nutze das Verkehrsnetz der Stadt, gutes Timing und Spezialaktionen. Überliste deine Gegner, statt sie zu überrennen._

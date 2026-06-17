@@ -5,6 +5,7 @@
   "description": "Schema for The Chase game rules manifest file",
   "type": "object",
   "required": ["version", "lastUpdated", "rules"],
+  "additionalProperties": false,
   "properties": {
     "version": {
       "type": "string",
@@ -29,6 +30,7 @@
     "ruleSection": {
       "type": "object",
       "required": ["id", "title", "file", "category", "order"],
+      "additionalProperties": false,
       "properties": {
         "id": {
           "type": "string",
@@ -45,7 +47,7 @@
         },
         "file": {
           "type": "string",
-          "description": "Markdown filename relative to rules directory",
+          "description": "Markdown filename relative to the current manifest directory",
           "pattern": "^[a-z0-9-]+\\.md$",
           "examples": ["objective.md", "gameplay.md", "clue-points.md"]
         },

@@ -3,7 +3,7 @@ All players gather at the **starting point** before the game begins.
 ## Teams
 
 - **Escapers:** 1 team
-- **Chasers:** 3 teams, working together to track down the Escapers *(2 teams also possible but harder for the Chasers)*
+- **Chasers:** 3 teams, working together to track down the Escapers _(2 teams also possible but harder for the Chasers)_
 - **Team Size:** 1–4 players per team
 - **Team Cohesion:** Each team moves freely and independently, but all players within a team must stay together at all times.
 
