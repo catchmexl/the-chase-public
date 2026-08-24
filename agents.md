@@ -20,6 +20,10 @@ rules/               # Game rules system
   de/
     rules.json       # German localized manifest
     *.md             # German localized rule files
+  variants/
+    <variant>/
+      rules.json     # English map-specific manifest
+      *.md           # Complete English rules variant
 legal-notice.html    # German §5 TMG legal notice
 privacy-policy.html
 terms-and-conditions.html
@@ -57,6 +61,14 @@ place, then run `node validate-rules.js` from `rules/`.
 Do not place localized rule markdown files at the root of `rules/`; the root is
 reserved for the English default.
 
+## Map-Specific Rule Variants
+
+English map-specific rules live under `rules/variants/<variant>/`. Each variant
+is a complete rules set with its own manifest and markdown files. Variant
+manifests mirror the root manifest for `id`, `file`, `category`, and `order`,
+while display metadata and content may differ. Variant identifiers use
+kebab-case and are selected by the app's map configuration.
+
 App/UI translations do not live in this public repo. They belong in the Flutter
 app repository under `lib/l10n/app_*.arb`, with terminology coordinated through
 that repository's `docs/translation.md`.
@@ -70,8 +82,8 @@ links when adding such variants.
 
 Run `node validate-rules.js` from `rules/`.
 
-The validator checks file existence, no duplicate IDs/orders/files, no orphaned markdown files, and locale manifest parity against the root manifest. `rules_manifest.schema.json` documents the manifest contract, but the current validator implements checks directly instead of using an external JSON Schema validator.
+The validator checks file existence, no duplicate IDs/orders/files, no orphaned markdown files, and localized/variant manifest parity against the root manifest. `rules_manifest.schema.json` documents the manifest contract, but the current validator implements checks directly instead of using an external JSON Schema validator.
 
 ## App Integration
 
-The mobile app fetches `rules.json` from `https://raw.githubusercontent.com/catchmexl/the-chase-public/main/rules/rules.json`, then loads individual markdown files. 24-hour cache.
+The mobile app fetches the default `rules.json` or an English map-specific manifest from `rules/variants/<variant>/rules.json`, then loads individual markdown files. 24-hour cache per locale or variant.

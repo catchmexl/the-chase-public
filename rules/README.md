@@ -23,6 +23,11 @@ Additional locales live in subdirectories and use the same manifest shape:
 Every localized manifest resolves its `file` entries relative to its own
 directory.
 
+English map-specific variants live under `variants/<variant>/` and contain a
+complete manifest plus all referenced markdown files. Their IDs, filenames,
+categories, and ordering mirror the root English rules, while their display
+metadata and content may differ.
+
 ## Manifest Structure
 
 Each `rules.json` follows this structure:
@@ -86,6 +91,14 @@ If adding, removing, or reordering sections:
    reason not to.
 3. Update `version` and `lastUpdated`.
 
+### Add or update a map-specific variant
+
+1. Create `rules/variants/<variant>/` using a kebab-case variant identifier.
+2. Copy the current English manifest and every referenced markdown file.
+3. Keep manifest IDs, filenames, categories, and order aligned with the root.
+4. Adjust English metadata and content for the map-specific rules.
+5. Run `node validate-rules.js`.
+
 ### Validate
 
 Run:
@@ -101,7 +114,8 @@ The validator checks:
 - referenced markdown files relative to each manifest directory
 - duplicate IDs, orders, and files inside a manifest
 - orphaned markdown files inside each manifest directory
-- localized manifests match the root manifest IDs, files, categories, and order
+- localized and variant manifests match the root manifest IDs, files,
+  categories, and order
 
 ## App Integration
 
@@ -109,6 +123,7 @@ The mobile app fetches:
 
 - English default: `https://raw.githubusercontent.com/catchmexl/the-chase-public/main/rules/rules.json`
 - Localized manifests: `https://raw.githubusercontent.com/catchmexl/the-chase-public/main/rules/<locale>/rules.json`
+- Map-specific variants: `https://raw.githubusercontent.com/catchmexl/the-chase-public/main/rules/variants/<variant>/rules.json`
 
 The app then:
 
@@ -117,6 +132,9 @@ The app then:
 3. Falls back to the root English manifest/content when localized content is
    missing
 4. Caches content per locale
+
+For a configured map-specific variant, the app loads the English variant
+directly and caches it separately from localized standard rules.
 
 ## Versioning
 

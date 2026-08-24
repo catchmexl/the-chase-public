@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-08-23T00:00:00Z",
+  "rules": [
+    {
+      "id": "objective",
+      "title": "Objective",
+      "file": "objective.md",
+      "category": "core",
+      "order": 1,
+      "description": "The main goal of the game for Escapers and Chasers"
+    },
+    {
+      "id": "preparation",
+      "title": "Preparation",
+      "file": "preparation.md",
+      "category": "core",
+      "order": 2,
+      "description": "Game setup, team formation, and winning conditions"
+    },
+    {
+      "id": "gameplay",
+      "title": "Game Play",
+      "file": "gameplay.md",
+      "category": "core",
+      "order": 3,
+      "description": "Three phases of GeoGuessr gameplay from Head Start to Closing In"
+    },
+    {
+      "id": "clue-points",
+      "title": "Clue Points",
+      "file": "clue-points.md",
+      "category": "mechanics",
+      "order": 4,
+      "description": "Freeze and 360° Video Clue Points on the GeoGuessr map"
+    },
+    {
+      "id": "types-of-clue-points",
+      "title": "Types of Clue Points",
+      "file": "types-of-clue-points.md",
+      "category": "mechanics",
+      "order": 5,
+      "description": "The effects of Freeze and 360° Video Clue Points"
+    },
+    {
+      "id": "tips",
+      "title": "Tips",
+      "file": "tips.md",
+      "category": "tips",
+      "order": 6,
+      "description": "Tips for the GeoGuessr map"
+    },
+    {
+      "id": "fair-play",
+      "title": "Fair Play",
+      "file": "fair-play.md",
+      "category": "conduct",
+      "order": 8,
+      "description": "Rules for fair play, safety, and honest Clue Point effects"
+    }
+  ]
+}
