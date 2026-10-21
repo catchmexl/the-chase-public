@@ -14,5 +14,6 @@ Bei zwei Jäger-Teams erhalten die Jäger **insgesamt 5 Joker**:
 
 Joker können von überall aktiviert werden, ohne einen Hinweis aufzusuchen:
 
-- Sie sind erst **30 Minuten nach Spielstart** verfügbar.
+- **Ticketcheck- und 360°-Video-Joker** sind **30 Minuten nach Spielstart** verfügbar.
+- Der **Live-Tracking-Joker** ist **45 Minuten nach Spielstart** verfügbar.
 - Zwischen zwei Joker-Aktivierungen müssen immer mindestens **10 Minuten** liegen – gemeinsam für beide Jäger-Teams und unabhängig vom Joker-Typ.

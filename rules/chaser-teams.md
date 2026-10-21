@@ -14,5 +14,6 @@ With two Chaser teams, the Chasers receive **5 jokers in total**:
 
 Jokers can be activated from anywhere, without visiting a Clue Point:
 
-- They become available **30 minutes after game start**.
+- **Ticket Check and 360° Video jokers** become available **30 minutes after game start**.
+- The **Live Tracking joker** becomes available **45 minutes after game start**.
 - There must be at least **10 minutes between any two joker activations**, across both Chaser teams and all joker types.
