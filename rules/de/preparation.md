@@ -3,8 +3,8 @@ Alle Spieler treffen sich vor Spielbeginn am **Startpunkt**.
 ## Teams
 
 - **Gejagte:** 1 Team
-- **Jäger:** 3 Teams, die zusammenarbeiten, um die Gejagten aufzuspüren _(2 Teams sind auch möglich, aber schwieriger für die Jäger)_
-- **Teamgröße:** 1-4 Spieler pro Team
+- **Jäger:** Je nach gewähltem Spielmodus 2 oder 3 Teams, die zusammenarbeiten, um die Gejagten aufzuspüren
+- **Gruppengröße:** Insgesamt 3–16 Spieler. Jedes Team braucht mindestens einen Spieler: mindestens 3 Spieler bei 2 Jäger-Teams oder 4 Spieler bei 3 Jäger-Teams.
 - **Teamzusammenhalt:** Die Teams bewegen sich unabhängig, aber alle Spieler innerhalb eines Teams müssen jederzeit zusammenbleiben.
 
 ## Bevor ihr startet

@@ -1,6 +1,6 @@
 {
-  "version": "1.1.1",
-  "lastUpdated": "2026-09-25T16:04:26Z",
+  "version": "1.1.2",
+  "lastUpdated": "2026-10-21T20:00:00Z",
   "rules": [
     {
       "id": "objective",
@@ -44,11 +44,11 @@
     },
     {
       "id": "chaser-teams",
-      "title": "2 Chaser Teams vs. 3 Chaser Teams",
+      "title": "2 oder 3 Jäger-Teams",
       "file": "chaser-teams.md",
       "category": "mechanics",
       "order": 6,
-      "description": "Gemeinsamer Joker-Vorrat und Timings bei zwei Chaser-Teams"
+      "description": "Gemeinsamer Joker-Vorrat und Wartezeiten bei zwei Jäger-Teams"
     },
     {
       "id": "tips",
