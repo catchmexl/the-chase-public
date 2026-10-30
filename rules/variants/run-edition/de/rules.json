@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-10-30T00:00:00Z",
+  "rules": [
+    {
+      "id": "objective",
+      "title": "Ziel",
+      "file": "objective.md",
+      "category": "core",
+      "order": 1,
+      "description": "Run Edition: Ziel"
+    },
+    {
+      "id": "preparation",
+      "title": "Vorbereitung",
+      "file": "preparation.md",
+      "category": "core",
+      "order": 2,
+      "description": "Run Edition: Vorbereitung"
+    },
+    {
+      "id": "gameplay",
+      "title": "Spielablauf der Run Edition",
+      "file": "gameplay.md",
+      "category": "core",
+      "order": 3,
+      "description": "Run Edition: Spielablauf"
+    },
+    {
+      "id": "clue-points",
+      "title": "Hinweise",
+      "file": "clue-points.md",
+      "category": "mechanics",
+      "order": 4,
+      "description": "Run Edition: Hinweise"
+    },
+    {
+      "id": "types-of-clue-points",
+      "title": "Arten von Hinweisen",
+      "file": "types-of-clue-points.md",
+      "category": "mechanics",
+      "order": 5,
+      "description": "Run Edition: Arten von Hinweisen"
+    },
+    {
+      "id": "chaser-teams",
+      "title": "Gemeinsame Power-ups der Jäger",
+      "file": "chaser-teams.md",
+      "category": "mechanics",
+      "order": 6,
+      "description": "Run Edition: 2 Chaser Teams vs. 3 Chaser Teams"
+    },
+    {
+      "id": "tips",
+      "title": "Tipps",
+      "file": "tips.md",
+      "category": "tips",
+      "order": 7,
+      "description": "Run Edition: Tipps"
+    },
+    {
+      "id": "fair-play",
+      "title": "Fair Play",
+      "file": "fair-play.md",
+      "category": "conduct",
+      "order": 8,
+      "description": "Run Edition: Fair Play"
+    }
+  ]
+}

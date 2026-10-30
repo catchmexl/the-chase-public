@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-10-30T00:00:00Z",
+  "rules": [
+    {
+      "id": "objective",
+      "title": "Objective",
+      "file": "objective.md",
+      "category": "core",
+      "order": 1,
+      "description": "Run Edition: Objective"
+    },
+    {
+      "id": "preparation",
+      "title": "Preparation",
+      "file": "preparation.md",
+      "category": "core",
+      "order": 2,
+      "description": "Run Edition: Preparation"
+    },
+    {
+      "id": "gameplay",
+      "title": "Run Edition game play",
+      "file": "gameplay.md",
+      "category": "core",
+      "order": 3,
+      "description": "Run Edition: Game Play"
+    },
+    {
+      "id": "clue-points",
+      "title": "Clue Points",
+      "file": "clue-points.md",
+      "category": "mechanics",
+      "order": 4,
+      "description": "Run Edition: Clue Points"
+    },
+    {
+      "id": "types-of-clue-points",
+      "title": "Types of Clue Points",
+      "file": "types-of-clue-points.md",
+      "category": "mechanics",
+      "order": 5,
+      "description": "Run Edition: Types of Clue Points"
+    },
+    {
+      "id": "chaser-teams",
+      "title": "Shared Chaser power-ups",
+      "file": "chaser-teams.md",
+      "category": "mechanics",
+      "order": 6,
+      "description": "Run Edition: 2 Chaser Teams vs. 3 Chaser Teams"
+    },
+    {
+      "id": "tips",
+      "title": "Tips",
+      "file": "tips.md",
+      "category": "tips",
+      "order": 7,
+      "description": "Run Edition: Tips"
+    },
+    {
+      "id": "fair-play",
+      "title": "Fair Play",
+      "file": "fair-play.md",
+      "category": "conduct",
+      "order": 8,
+      "description": "Run Edition: Fair Play"
+    }
+  ]
+}
