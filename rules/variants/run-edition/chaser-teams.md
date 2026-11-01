@@ -1,4 +1,4 @@
-Two or three Chaser teams use the same Run Edition rules.
+Shared power-ups are available with **{{POWER_UP_TEAM_COUNTS}} Chaser teams**. Other team counts use the map’s Clue Points without additional shared power-ups.
 
 All Chaser teams **share one pool** of {{VIDEO_COUNT}} 360° Videos and {{TRACKING_COUNT}} Live Tracking power-ups. Using one spends it for every Chaser team. These uses are additional to the map's Clue Points and can be activated from anywhere.
 
