@@ -2,11 +2,11 @@
 
 ## Project Overview
 
-**The Chase** — rules & legal docs repository for an urban real-life chase game by JLL Chasing Reality UG (Berlin). A mobile app fetches rules content from this repo via GitHub raw URLs.
+**The Chase** — public game rules and map creation tutorial repository for an urban real-life chase game by JLL Chasing Reality UG (Berlin). A mobile app fetches rules content from this repo via GitHub raw URLs.
 
 ## Tech Stack
 
-- **Content**: Markdown (rules), HTML/CSS (legal pages)
+- **Content**: Markdown (rules), PDF (map creation tutorial)
 - **Validation**: Node.js v18+ custom validator, documented JSON Schema (Draft-07)
 
 ## Project Structure
@@ -24,9 +24,7 @@ rules/               # Game rules system
     <variant>/
       rules.json     # English map-specific manifest
       *.md           # Complete English rules variant
-legal-notice.html    # German §5 TMG legal notice
-privacy-policy.html
-terms-and-conditions.html
+The_Chase_-_Map_creation_Tutorial.pdf
 ```
 
 ## Key Conventions
@@ -73,10 +71,8 @@ App/UI translations do not live in this public repo. They belong in the Flutter
 app repository under `lib/l10n/app_*.arb`, with terminology coordinated through
 that repository's `docs/translation.md`.
 
-For non-rule public HTML documents in this repo, keep translated variants next
-to the source document with an explicit locale suffix, for example
-`privacy-policy.de.html` or `privacy-policy.en.html`, and update any consuming
-links when adding such variants.
+Legal documents are maintained in `catchmexl/TheChase.site`. Use the official
+website URLs linked in `README.md` when referencing them.
 
 ## Validation
 
