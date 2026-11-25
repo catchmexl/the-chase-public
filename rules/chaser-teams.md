@@ -12,4 +12,4 @@ With two Chaser teams, the Chasers receive shared jokers:
 
 **Both Chaser teams share this pool.** Using a joker spends it for all Chasers.
 
-Jokers can be activated from anywhere, without visiting a Clue Point. There must be at least **{{JOKER_COOLDOWN}} minutes between any two joker activations**, across both Chaser teams and all joker types.
+Jokers can be activated from anywhere, without visiting a Clue Point. There must be at least **{{JOKER_COOLDOWN}} minutes between any two joker activations**, across both Chaser teams.

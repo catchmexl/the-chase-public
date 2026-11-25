@@ -12,4 +12,4 @@ Bei zwei Chaser-Teams erhalten die Jäger gemeinsame Joker:
 
 **Die beiden Chaser-Teams teilen sich diesen Pool.** Ein eingesetzter Joker ist für alle Jäger verbraucht.
 
-Joker können von überall aktiviert werden, ohne einen Hinweis aufzusuchen. Zwischen zwei Joker-Aktivierungen müssen immer mindestens **{{JOKER_COOLDOWN}} Minuten** liegen – gemeinsam für beide Chaser-Teams und unabhängig vom Joker-Typ.
+Joker können von überall aktiviert werden, ohne einen Hinweis aufzusuchen. Zwischen zwei Joker-Aktivierungen müssen immer mindestens **{{JOKER_COOLDOWN}} Minuten** liegen – gemeinsam für beide Chaser-Teams.
