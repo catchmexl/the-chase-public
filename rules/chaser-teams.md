@@ -1,23 +1,15 @@
-## Shared jokers
+## 3 Chaser Teams: normal rules
 
-Number of Chaser teams that get shared jokers: **{{POWER_UP_TEAM_COUNTS}}**. With any other number of Chaser teams, or if no number is shown, the normal rules apply: Chasers use Clue Points on the map and receive no jokers.
+With three Chaser teams, the normal rules apply. Chasers use Clue Points on the map and receive no jokers.
 
-The Chasers receive:
+## 2 Chaser Teams: shared jokers
 
-- Ticket Checks: **{{TICKET_CHECK_COUNT}}**
-- 360° Videos: **{{VIDEO_COUNT}}**
-- Live Trackings: **{{TRACKING_COUNT}}**
+With two Chaser teams, the Chasers receive shared jokers:
 
-A joker type with **0** is not available in this game.
+- **{{TICKET_CHECK_COUNT}}× Ticket Check**, available from minute {{TICKET_CHECK_UNLOCK}}
+- **{{VIDEO_COUNT}}× 360° Video**, available from minute {{VIDEO_UNLOCK}}
+- **{{TRACKING_COUNT}}× Live Tracking**, available from minute {{TRACKING_UNLOCK}}
 
-**All Chaser teams share this pool.** Using a joker spends it for all Chasers.
+**Both Chaser teams share this pool.** Using a joker spends it for all Chasers.
 
-Jokers can be activated from anywhere, without visiting a Clue Point. Earliest activation after game start, for the joker types in this game:
-
-- Ticket Checks: minute **{{TICKET_CHECK_UNLOCK}}**
-- 360° Videos: minute **{{VIDEO_UNLOCK}}**
-- Live Tracking: minute **{{TRACKING_UNLOCK}}**
-
-If there are several jokers of one type, the others may unlock later.
-
-There must be at least **{{JOKER_COOLDOWN}} minutes between any two joker activations**, across all Chaser teams and all joker types.
+Jokers can be activated from anywhere, without visiting a Clue Point. There must be at least **{{JOKER_COOLDOWN}} minutes between any two joker activations**, across both Chaser teams and all joker types.
