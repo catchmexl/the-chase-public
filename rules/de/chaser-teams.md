@@ -4,15 +4,12 @@ Bei drei Chaser-Teams gelten die normalen Regeln. Die Jäger nutzen die Hinweise
 
 ## 2 Chaser Teams: gemeinsame Joker
 
-Bei zwei Chaser-Teams erhalten die Jäger **insgesamt 5 Joker**:
+Bei zwei Chaser-Teams erhalten die Jäger gemeinsame Joker:
 
-- **2 Ticketchecks**
-- **2 360° Videos**
-- **1 Live-Tracking (Location)**
+- **{{TICKET_CHECK_COUNT}}× Ticketcheck**, verfügbar ab Minute {{TICKET_CHECK_UNLOCK}}
+- **{{VIDEO_COUNT}}× 360° Video**, verfügbar ab Minute {{VIDEO_UNLOCK}}
+- **{{TRACKING_COUNT}}× Live-Tracking (Location)**, verfügbar ab Minute {{TRACKING_UNLOCK}}
 
 **Die beiden Chaser-Teams teilen sich diesen Pool.** Ein eingesetzter Joker ist für alle Jäger verbraucht.
 
-Joker können von überall aktiviert werden, ohne einen Hinweis aufzusuchen:
-
-- Sie sind erst **30 Minuten nach Spielstart** verfügbar.
-- Zwischen zwei Joker-Aktivierungen müssen immer mindestens **10 Minuten** liegen – gemeinsam für beide Chaser-Teams und unabhängig vom Joker-Typ.
+Joker können von überall aktiviert werden, ohne einen Hinweis aufzusuchen. Zwischen zwei Joker-Aktivierungen müssen immer mindestens **{{JOKER_COOLDOWN}} Minuten** liegen – gemeinsam für beide Chaser-Teams.
